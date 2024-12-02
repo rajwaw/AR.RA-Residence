@@ -1,5 +1,4 @@
 function hideseek() {
-
   var password = document.getElementById("password");
   if (password.type === "password") {
       password.type = "text";
@@ -18,10 +17,9 @@ function kirimData() {
   params.append('password', password);
 
   // Redirect ke halaman hasil dengan query string
-  window.location.href = 'landing.html?' + params.toString();
+  window.location.href = 'website.html?' + params.toString();
   return false; // Mencegah submit form standar
 }
-
 
 function togglePassword() {
       const passwordField = document.getElementById('password');
@@ -31,12 +29,6 @@ function togglePassword() {
           passwordField.type = 'password';
       }
   }
-
- // Fungsi untuk menampilkan atau menyembunyikan password
-function hideseek() {
-const passwordField = document.getElementById('password');
-passwordField.type = passwordField.type === 'password' ? 'text' : 'password';
-}
 
 // Fungsi untuk menyimpan data username dan password ke local storage dan melakukan validasi
 function kirimData() {
