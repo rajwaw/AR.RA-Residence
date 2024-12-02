@@ -28,9 +28,9 @@ header .close {
 /* Container Styling */
 .container {
     background-color:#ffff;
-    border-radius: 8px;
+    border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 300px;
+    width: 500px;
     margin: 50px auto;
     padding: 20px;
     border: 1px solid #565e68;
@@ -44,7 +44,7 @@ header .close {
 label {
     font-size: 16px;
     color: #4682b4;
-    display: flexbox;
+    display: block;
    
 }
 
