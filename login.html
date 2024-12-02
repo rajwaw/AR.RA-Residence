@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AR.RA RESIDENCE</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+    <header>
+        <div class="close">
+            <a href="website.html">
+                <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18 17.94 6M18 18 6.06 6"/>
+                  </svg> 
+            </a>             
+        </div>
+    </header>
+    <div class="container">
+        <form action="website.html" method="GET" onsubmit="return kirimData()">
+            <img src="logo arra.png" alt="Logo" width="20%">
+            <h1 data-text="&nbsp;LOGIN&nbsp;">&nbsp;LOGIN&nbsp;</h1>
+            
+            <label for="username">Username:</label>
+            <input type="text" name="username" id="username" required>
+            <br><br>
+            
+            <label for="password">Password:</label>
+            <input type="password" name="password" id="password" size="11" maxlength="9" required>
+            <br><br>
+            
+            <label>
+                <input type="checkbox" onclick="hideseek()"> Show Password
+            </label>
+            <br>
+            
+            <button type="submit">Login</button>
+        </form>
+    </div>
+    
+    <script src="login.js"></script>
+</body>
+</html>

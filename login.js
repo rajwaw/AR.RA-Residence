@@ -1,40 +1,57 @@
-<script>
-    function showForm(formType) {
-      document.querySelectorAll('.auth-tab').forEach(tab => tab.classList.remove('active'));
-      document.querySelectorAll('.auth-form').forEach(form => form.classList.remove('active'));
+function hideseek() {
 
-      document.querySelector(.auth-tab[onclick="showForm('${formType}')"]).classList.add('active');
-      document.getElementById(${formType}-form).classList.add('active');
-    }
+  var password = document.getElementById("password");
+  if (password.type === "password") {
+      password.type = "text";
+  }
+  else {
+      password.type = "password";
+  }
+}
+function kirimData() {
+  var username = document.getElementById('username').value;
+  var password = document.getElementById('password').value;
 
-    function handleLogin(event) {
-      event.preventDefault();
-      const email = document.getElementById('login-email').value;
-      const password = document.getElementById('login-password').value;
-      if (email && password) {
-        showNotification('Login successful!', 'success');
+  // Simpan data ke URL
+  var params = new URLSearchParams();
+  params.append('username', username);
+  params.append('password', password);
+
+  // Redirect ke halaman hasil dengan query string
+  window.location.href = 'landing.html?' + params.toString();
+  return false; // Mencegah submit form standar
+}
+
+
+function togglePassword() {
+      const passwordField = document.getElementById('password');
+      if (passwordField.type === 'password') {
+          passwordField.type = 'text';
       } else {
-        showNotification('Invalid email or password!', 'error');
+          passwordField.type = 'password';
       }
-    }
+  }
 
-    function handleRegister(event) {
-      event.preventDefault();
-      const name = document.getElementById('register-name').value;
-      const email = document.getElementById('register-email').value;
-      const password = document.getElementById('register-password').value;
-      if (name && email && password.length >= 6) {
-        showNotification('Registration successful!', 'success');
-      } else {
-        showNotification('Please fill out all fields correctly!', 'error');
-      }
-    }
+ // Fungsi untuk menampilkan atau menyembunyikan password
+function hideseek() {
+const passwordField = document.getElementById('password');
+passwordField.type = passwordField.type === 'password' ? 'text' : 'password';
+}
 
-    function showNotification(message, type) {
-      const notification = document.getElementById('auth-notification');
-      notification.textContent = message;
-      notification.className = notification ${type};
-      notification.style.display = 'block';
-      setTimeout(() => notification.style.display = 'none', 3000);
-    }
-  </script>
+// Fungsi untuk menyimpan data username dan password ke local storage dan melakukan validasi
+function kirimData() {
+const username = document.getElementById('username').value;
+const password = document.getElementById('password').value;
+
+if (username === '' || password === '') {
+  alert('Username dan Password wajib diisi.');
+  return false;
+}
+
+// Simpan ke local storage
+localStorage.setItem('username', username);
+localStorage.setItem('password', password);
+
+alert('Data berhasil disimpan!');
+return true; // Lanjutkan submit
+}
